@@ -1,0 +1,35 @@
+---
+title: "cbb24"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{cbb24}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(cbb24)
+```
+
+# cbb24
+
+## Description
+
+This cbb24 **R** package contains the formatted data set of College Basketball games from the 2023-2024 season, occurring in the year 2023. It contains functions that filter by team, give statistics by team, and a function that computes a tibble with all teams win percentage, percentage of home games, and number of games played.
+
+## Examples
+
+```{r examples, echo = T, eval = T, fig.width=6,fig.height = 4}
+library(cbb24)
+team_filter('Southern Utah') # Filters the data set to just games played by the team argument
+Results_team('Southern Utah') # Returns a list of important statistics for specified team
+Total_win_perc() # Returns a tibble with important statistics for every team
+```
+
