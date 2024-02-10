@@ -14,8 +14,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+
 ```{r setup}
 library(cbb24)
+library(tidyverse)
 ```
 
 # cbb24
@@ -27,9 +29,11 @@ This cbb24 **R** package contains the formatted data set of College Basketball g
 ## Examples
 
 ```{r examples, echo = T, eval = T, fig.width=6,fig.height = 4}
-library(cbb24)
+data(cbbga24)
+data(cbbga_wins_23)
 team_filter('Southern Utah') # Filters the data set to just games played by the team argument
 Results_team('Southern Utah') # Returns a list of important statistics for specified team
-Total_win_perc() # Returns a tibble with important statistics for every team
+barplot_win_vs_homestatus() # Returns a bar plot of wins split by away and home games
+boxplot_winmargin_vs_homestatus() # Returns a box plot of win margins split by away and home games
+scatterplot_winpercentage_vs_homestatus() # Returns a scatter plot of win percentage and percentage of home games with colors reflecting total games played
 ```
-

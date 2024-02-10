@@ -17,4 +17,6 @@
 #'
 #' @export
 
-team_filter <- function(team) filter(cbbga24, Away == team | Home == team)
+team_filter <- function(team) {
+  filter(cbbga24, Away == team | Home == team)
+}
