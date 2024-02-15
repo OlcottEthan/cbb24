@@ -19,9 +19,9 @@
 #'
 #' @export
 
-Results_team <- function(team) {
+team_results <- function(team) {
   
-  team_results <- team_filter(team) |>
+  results <- team_filter(team) |>
     mutate(team = team,
            home = ifelse(Away == team,FALSE,TRUE),
            result = case_when(score_diff > 0 & (Away == team) ~ 'win',
@@ -36,5 +36,5 @@ Results_team <- function(team) {
            win_percentage = win/total_games) |>
     select(team,win,loss,win_percentage,home_games,total_games,home_percentage)
   
-return(team_results)
+return(results)
 }
