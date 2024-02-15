@@ -26,5 +26,5 @@ boxplot_winmargin_vs_homestatus <- function(){
     ggplot(aes(x = win_type, y = abs(score_diff))) +
     geom_boxplot(fill = c('red','blue')) +
     labs(x = "Traveling status", y = "Win Margin",
-         title = f'Distribution of Win Margin by Traveling Status of {}')
+         title = 'Distribution of Win Margin by Traveling Status')
 }

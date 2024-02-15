@@ -2,9 +2,12 @@
 % Please edit documentation in R/boxplot_winmargin_vs_homestatus.R
 \name{boxplot_winmargin_vs_homestatus}
 \alias{boxplot_winmargin_vs_homestatus}
-\title{Gives a quick boxplot of win margin.}
+\title{Gives a quick boxplot of win margin for a specific team.}
 \usage{
 boxplot_winmargin_vs_homestatus()
+}
+\arguments{
+\item{team}{This is the desired team to generate plot for.}
 }
 \value{
 This function returns a split boxplot with the margin of a win,
@@ -14,7 +17,7 @@ split whether those wins were at a home event or away.
 This will return a barplot of the number of wins vs traveling status.
 }
 \examples{
-## Give a boxplot of win margin with split on traveling or home games
-boxplot_winmargin_vs_homestatus()
+## Give a boxplot of win margin with split on traveling or home games for BYU
+boxplot_winmargin_vs_homestatus('BYU')
 
 }
