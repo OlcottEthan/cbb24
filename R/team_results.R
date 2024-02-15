@@ -32,7 +32,7 @@ team_results <- function(team) {
     summarize(win = sum(result == 'win'),
              loss = sum(result == 'loss'),
              total_games = length(home)) |>
-    mutate(home_percentage = home_games/total_games,
+    mutate(home_percentage = home_game/total_games,
            win_percentage = win/total_games) |>
     select(team,win,loss,win_percentage,home_games,total_games,home_percentage)
   
