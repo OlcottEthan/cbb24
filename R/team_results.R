@@ -22,19 +22,20 @@
 team_results <- function(team) {
   
   results <- team_filter(team) |>
-    mutate(team = team,
-           home = ifelse(Away == team,FALSE,TRUE),
+    mutate(home = ifelse(Away == team,FALSE,TRUE),
            result = case_when(score_diff > 0 & (Away == team) ~ 'win',
                               score_diff < 0 & (Home == team) ~ 'win',
                               score_diff == 0 ~ 'tie',
                               TRUE ~ 'loss'),
            home_game = ifelse(Home == team,TRUE,FALSE)) |>
     summarize(win = sum(result == 'win'),
-             loss = sum(result == 'loss'),
-             total_games = length(home)) |>
-    mutate(home_percentage = home_game/total_games,
+              loss = sum(result == 'loss'),
+              home_games = sum(home_game),
+              total_games = length(home)) |>
+    mutate(team = team,
+           home_percentage = home_games/total_games,
            win_percentage = win/total_games) |>
     select(team,win,loss,win_percentage,home_games,total_games,home_percentage)
   
-return(results)
+  return(results)
 }
