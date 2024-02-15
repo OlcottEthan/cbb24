@@ -17,7 +17,7 @@
 #'
 #' @export
 
-boxplot_winmargin_vs_homestatus <- function(){
+boxplot_winmargin_vs_homestatus <- function(team){
   team_filter(team) |>
     filter((Away == team & score_diff > 0) | (Home == team & score_diff < 0)) |>
     mutate(win_type = case_when(score_diff > 0 ~ 'Away',
