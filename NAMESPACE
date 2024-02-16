@@ -2,6 +2,7 @@
 
 export(barplot_win_vs_homestatus)
 export(boxplot_winmargin_vs_homestatus)
+export(runTeamPlots)
 export(scatterplot_winpercentage_vs_homestatus)
 export(team_filter)
 export(team_results)
