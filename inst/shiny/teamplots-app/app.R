@@ -30,7 +30,11 @@ server <- function (input,output,session){
       paste("No team specified")
     }else if (!valid_name()){
       similar_names <- teams[grep(input$team,teams,ignore.case = TRUE)]
-      result_string <- paste("similar team names:", paste(similar_names, collapse = ", "))
+      if (length(similar_names) == 0){
+        return("Not a valid team name")
+      } else {
+        return(result_string <- paste("Similar team names:", paste(similar_names, collapse = ", ")))
+      }
     }else{
       ""
     }
