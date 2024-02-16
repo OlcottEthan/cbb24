@@ -18,6 +18,8 @@ ui <- fluidPage(
 )
 
 server <- function (input,output,session){
+  library(shiny)
+  library(kableExtra)
   
   teams <- sort(cbbga_wins_23[['team']])
   
